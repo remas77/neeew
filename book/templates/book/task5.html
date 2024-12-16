@@ -1,0 +1,18 @@
+<!-- templates/books/task5.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Statistics</title>
+</head>
+<body>
+    <h1>Book Statistics</h1>
+    <ul>
+        <li>Total number of books: {{ book_stats.total_books }}</li>
+        <li>Total price of all books: ${{ book_stats.total_price }}</li>
+        <li>Average price of books: ${{ book_stats.average_price }}</li>
+        <li>Maximum price of a book: ${{ book_stats.max_price }}</li>
+        <li>Minimum price of a book: ${{ book_stats.min_price }}</li>
+    </ul>
+</body>
+</html>

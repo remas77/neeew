@@ -1,0 +1,16 @@
+<!-- templates/books/task1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Affordable Books</title>
+</head>
+<body>
+    <h1>Books with Price ≤ 50</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} - ${{ book.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

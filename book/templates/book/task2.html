@@ -1,0 +1,16 @@
+<!-- templates/books/task2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtered Books</title>
+</head>
+<body>
+    <h1>Books with Edition > 2 and 'qu' in Title or Author</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author }} - Edition {{ book.edition }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

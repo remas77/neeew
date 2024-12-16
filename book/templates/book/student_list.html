@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <ul>
+        {% for student in students %}
+            <li>
+                <strong>Name:</strong> {{ student.name }} <br>
+                <strong>Age:</strong> {{ student.age }} <br>
+                <strong>Email:</strong> {{ student.email }} <br>
+                <strong>Addresses:</strong>
+                <ul>
+                    {% for address in student.addresses.all %}
+                        <li>{{ address.street }}, {{ address.city }} ({{ address.zip_code }})</li>
+                    {% empty %}
+                        <li>No addresses assigned</li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'student_update' student.id %}">Edit</a> |
+                <a href="{% url 'student_delete' student.id %}">Delete</a>
+            </li>
+        {% empty %}
+            <p>No students available.</p>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'student_add' %}">Add New Student</a>
+</body>
+</html>

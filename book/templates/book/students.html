@@ -1,0 +1,16 @@
+<!-- templates/usermodule/students_per_city.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Per City</title>
+</head>
+<body>
+    <h1>Number of Students in Each City</h1>
+    <ul>
+        {% for address in city_student_counts %}
+            <li>{{ address.city }}: {{ address.student_count }} students</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
